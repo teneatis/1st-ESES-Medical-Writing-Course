@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st ESES Medical Writing Course</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a3a6b, #2c5aa0);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .header .date {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .header .hours {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+
+        /* Course Days Section */
+        .days-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #1a3a6b;
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2c5aa0;
+            display: inline-block;
+            width: auto;
+        }
+
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e9ecef;
+        }
+
+        .day-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .day-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* PDF Section */
+        .pdf-section {
+            background: linear-gradient(135deg, #e8f0fe, #d4e2f7);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pdf-section h2 {
+            color: #1a3a6b;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .pdf-section p {
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .pdf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+        }
+
+        .pdf-button:hover {
+            background: #c82333;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.85rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header .date {
+                font-size: 1rem;
+            }
+            
+            .days-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pdf-section {
+                padding: 25px;
+            }
+            
+            .pdf-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📝 1st ESES Medical Writing Course</h1>
+            <div class="date">📅 1 - 10 June 2026</div>
+            <div class="hours">⏰ 12 hours of lessons spread over 4 days (3 hours each)</div>
+        </div>
+
+        <!-- Course Days -->
+        <div class="days-section">
+            <div class="title-wrapper">
+                <h2 class="section-title">Course Schedule</h2>
+            </div>
+            <div class="days-grid">
+                <!-- Day 1 -->
+                <div class="day-card">
+                    <img src="Day1.jpg" alt="Day 1" class="day-image" onerror="this.src='https://placehold.co/400x200?text=Day+1'">
+                    <div class="day-content">
+                        <h3 class="day-title">Day 1</h3>
+                        <p class="day-desc">Introduction to Medical Writing</p>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-card">
+                    <img src="Day2.jpg" alt="Day 2" class="day-image" onerror="this.src='https://placehold.co/400x200?text=Day+2'">
+                    <div class="day-content">
+                        <h3 class="day-title">Day 2</h3>
+                        <p class="day-desc">Scientific Publications & Manuscript Preparation</p>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-card">
+                    <img src="Day3.jpg" alt="Day 3" class="day-image" onerror="this.src='https://placehold.co/400x200?text=Day+3'">
+                    <div class="day-content">
+                        <h3 class="day-title">Day 3</h3>
+                        <p class="day-desc">Regulatory Writing & Ethics</p>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="day-card">
+                    <img src="Day4.jpg" alt="Day 4" class="day-image" onerror="this.src='https://placehold.co/400x200?text=Day+4'">
+                    <div class="day-content">
+                        <h3 class="day-title">Day 4</h3>
+                        <p class="day-desc">Practical Workshop & Case Studies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Download Section -->
+        <div class="pdf-section">
+            <h2>📄 Course Brochure & Details</h2>
+            <p>Download the full program, learning objectives, and faculty information</p>
+            <a href="1st_ESES_Medical_Writing_Course.pdf" class="pdf-button" target="_blank">
+                📥 Download PDF Brochure
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 1st ESES Medical Writing Course. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
