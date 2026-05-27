@@ -91,7 +91,7 @@
             margin-bottom: 50px;
         }
 
-        /* Title row with logo and registration button */
+        /* Title row with logo only (no button) */
         .title-row {
             display: flex;
             justify-content: space-between;
@@ -135,30 +135,10 @@
             display: inline-block;
         }
 
-        .registration-btn {
-            background: linear-gradient(135deg, #28a745, #1e7e34);
-            color: white;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
-
-        .registration-btn:hover {
-            background: linear-gradient(135deg, #218838, #166b2c);
-            transform: scale(1.02);
-        }
-
+        /* Force 2 columns for the schedule */
         .days-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr) !important;
             gap: 30px;
         }
 
@@ -168,6 +148,8 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .day-card:hover {
@@ -191,6 +173,9 @@
         .day-content {
             padding: 20px;
             text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .day-title {
@@ -202,6 +187,29 @@
         .day-desc {
             color: #666;
             font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .registration-btn {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .registration-btn:hover {
+            background: linear-gradient(135deg, #218838, #166b2c);
+            transform: scale(1.02);
         }
 
         /* PDF Section */
@@ -274,13 +282,10 @@
             .logo-area {
                 justify-content: center;
             }
-
-            .registration-btn {
-                white-space: normal;
-            }
             
+            /* On mobile, switch back to 1 column */
             .days-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
             }
             
             .pdf-section {
@@ -304,20 +309,19 @@
     </style>
 </head>
 <body>
-        <div style="text-align: center; padding: 20px 0 0 0;">
+    <!-- Logo outside header, centered at the very top -->
+    <div style="text-align: center; padding: 20px 0 0 0;">
         <a href="https://www.eses.cc" target="_blank">
             <img src="Eses_Logo.jpg" alt="ESES Logo" style="width: 200px; height: auto;">
         </a>
     </div>
+
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div style="margin-bottom: 20px;">
-              
-            </div>
-            <h1> 1st ESES Medical Writing Course</h1>
-            <div class="date"> 1 - 10 June 2026</div>
-            <div class="hours"> 12 hours of lessons spread over 4 days (3 hours each)</div>
+            <h1>📝 1st ESES Medical Writing Course</h1>
+            <div class="date">📅 1 - 10 June 2026</div>
+            <div class="hours">⏰ 12 hours of lessons spread over 4 days (3 hours each)</div>
         </div>
 
         <!-- Description Section -->
@@ -326,13 +330,13 @@
                 Welcome to the ESES Medical Writing Course, organized by the Education Committee of the European Society of Endocrine Surgeons (ESES). This course has been designed to provide ESES members with essential knowledge and practical skills in study design, medical writing, scientific publication, and research dissemination, supporting the development of high-quality academic and clinical research. The course is offered free of charge and will take place on Monday 1st June, Wednesday 3rd June, Monday 8th June, and Wednesday 10th June, from 18:00–21:00 CET. Upon successful participation, attendees will receive a certificate awarded by the ESES Education Committee.
             </div>
             <div class="registration-note">
-                 For registration, please click on the following link: <a href="#" target="_blank">Insert registration link</a>
+                📌 For registration, please click on the button below for each day.
             </div>
         </div>
 
         <!-- Course Days Section -->
         <div class="days-section">
-            <!-- Title row with logo and registration button -->
+            <!-- Title row with logo and no button -->
             <div class="title-row">
                 <div class="logo-area">
                     <a href="https://www.eses.cc" target="_blank" class="logo-link">
@@ -342,13 +346,11 @@
                 <div class="title-wrapper">
                     <h2 class="section-title">Course Schedule</h2>
                 </div>
-                <div>
-                    <a href="#" class="registration-btn" target="_blank">
-                         Register Now
-                    </a>
-                </div>
+                <!-- Empty spacer to balance the flex layout -->
+                <div style="width: 290px;"></div>
             </div>
 
+            <!-- Days Grid: 2 columns -->
             <div class="days-grid">
                 <!-- Day 1 -->
                 <div class="day-card">
@@ -358,6 +360,9 @@
                     <div class="day-content">
                         <h3 class="day-title">Day 1</h3>
                         <p class="day-desc">Monday 1st June<br>18:00–21:00 CET</p>
+                        <a href="https://us02web.zoom.us/webinar/register/WN_fkUTZ239TMutmzdSYe2XUg" class="registration-btn" target="_blank" rel="noopener noreferrer">
+                            📋 Register for Day 1
+                        </a>
                     </div>
                 </div>
 
@@ -369,6 +374,9 @@
                     <div class="day-content">
                         <h3 class="day-title">Day 2</h3>
                         <p class="day-desc">Wednesday 3rd June<br>18:00–21:00 CET</p>
+                        <a href="https://us02web.zoom.us/webinar/register/WN_Z498iPvzTPyGdZ8qRXU3nw" class="registration-btn" target="_blank" rel="noopener noreferrer">
+                             Register for Day 2
+                        </a>
                     </div>
                 </div>
 
@@ -380,6 +388,9 @@
                     <div class="day-content">
                         <h3 class="day-title">Day 3</h3>
                         <p class="day-desc">Monday 8th June<br>18:00–21:00 CET</p>
+                        <a href="https://us02web.zoom.us/webinar/register/WN_oeVFQwRcTQKgOzcjpVWpMQ" class="registration-btn" target="_blank" rel="noopener noreferrer">
+                             Register for Day 3
+                        </a>
                     </div>
                 </div>
 
@@ -391,6 +402,9 @@
                     <div class="day-content">
                         <h3 class="day-title">Day 4</h3>
                         <p class="day-desc">Wednesday 10th June<br>18:00–21:00 CET</p>
+                        <a href="https://us02web.zoom.us/webinar/register/WN_FSpKBOxXTb-lwo8RiIPWEg" class="registration-btn" target="_blank" rel="noopener noreferrer">
+                             Register for Day 4
+                        </a>
                     </div>
                 </div>
             </div>
